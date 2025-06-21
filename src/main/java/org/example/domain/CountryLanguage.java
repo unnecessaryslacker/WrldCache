@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,19 +9,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "city")
-public class City {
+@Table(name = "countrylanguage")
+@IdClass(CountryLanguageId.class)
+public class CountryLanguage {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    private String name;
-
     @Column(name = "countrycode")
     private String countryCode;
 
-    private String district;
+    @Id
+    private String language;
 
-    private int population;
+    private boolean isOfficial;
+
+    private double percentage;
 }

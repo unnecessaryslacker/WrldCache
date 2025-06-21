@@ -16,9 +16,9 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="org.example.entity.City"/>
-        <mapping class="org.example.entity.Country"/>
-        <mapping class="org.example.entity.CountryLanguage"/>
+        <mapping class="org.example.domain.City"/>
+        <mapping class="org.example.domain.Country"/>
+        <mapping class="org.example.domain.CountryLanguage"/>
 
     </session-factory>
 </hibernate-configuration>
