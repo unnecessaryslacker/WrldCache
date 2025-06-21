@@ -1,4 +1,4 @@
-package org.example.domain;
+package com.javarush.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -6,22 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(schema = "world", name = "city")
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "city")
 public class City {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
 
-    @Column(name = "countrycode")
-    private String countryCode;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 
     private String district;
-
-    private int population;
+    private Integer population;
 }
